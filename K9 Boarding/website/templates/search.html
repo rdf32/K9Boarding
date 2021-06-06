@@ -1,0 +1,51 @@
+<!-- inheritance from base.html -->
+{% extends "base.html" %} 
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div style="display:flex;justify-content:flex-end;margin-top: 20px;margin-bottom: 20px;">
+<form id="user-search" method="POST" style="display: flex;justify-content:space-around;margin: auto;">
+        <div class="form-group">
+            <input type="search" class="form-control" id="oSearch" name="oSearch" placeholder="Search Owners">
+        </div>
+        
+        <button type="submit" style="height: 2.5rem;"><i class="fa fa-search"></i>
+        </button>
+</form>
+</form>
+<form id="pet-search" method="POST"  style="display: flex;justify-content:space-around;margin: auto;">
+    <div class="form-group">
+        <input type="search" class="form-control" id="pSearch" name="pSearch" placeholder="Search Pets">
+    </div>
+    <button type="submit" style="height: 2.5rem;"><i class="fa fa-search"></i>
+    </button>
+</form>
+</div>
+{% for user in users %}
+
+<div>
+    <p>Owner email: {{user.owner_email}}</p>
+    <p>First name: {{user.first_name}}</p>
+    <p>Last name: {{user.last_name}}</p>
+    <p>Phone Number: {{user.phone}}</p>
+    <p>Pet name: {{user.pet_name}}</p>
+    <p>Pet Id: {{user.pet_id}}</p>
+</div>
+<br>
+{% endfor %}
+
+{% for pet in pets %}
+
+<div>
+    <p>Pet name: {{pet.pet_name}}</p>
+    <p>Pet Id: {{pet.pet_id}}</p>
+    <p>Owner email: {{pet.owner_email}}</p>
+    <p>Phone Number: {{user.phone}}</p>
+    <p>First name: {{pet.first_name}}</p>
+    <p>Last name: {{pet.last_name}}</p>
+    
+</div>
+<br>
+{% endfor %}
+{% endblock %}

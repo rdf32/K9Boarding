@@ -1,0 +1,21 @@
+<!-- inheritance from base.html -->
+{% extends "base.html" %} 
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 align="center">Home</h1>
+{% if user.role == 'client'%}
+
+<h2> Pets </h2>
+{% for pet in user.pets %}
+<div>
+    <p>Pet name: {{pet.name}}</p>
+    <p>Pet Id: {{pet.id}}</p>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
+
+<!-- add place to add pets for each user and also place that displays the pets they have added-->

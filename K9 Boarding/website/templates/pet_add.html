@@ -1,0 +1,25 @@
+<!-- inheritance from base.html -->
+{% extends "base.html" %} 
+
+{% block title %}Add Pets{% endblock %}
+
+{% block content %}
+
+{% if user.role == "admin"%}
+<form method="POST">
+    <h3 align="center">Add Pet</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="pname">Pet Name</label>
+        <input type="text" class="form-control" id="pname" name="pname" placeholder="Enter pet name">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endif %}
+
+
+{% endblock %}
